@@ -15,7 +15,8 @@ describe "create table with correct schema" do
     expected = {
       :integer => ["id"],
       :string => ["first_name", "last_name", "gender", "email", "phone"],
-      :date => ["birthday"]
+      :date => ["birthday"],
+      :datetime => ["created_at", "updated_at"]
     }
 
     ActiveRecord::Base.connection.columns(:students).each do |col|
@@ -23,3 +24,5 @@ describe "create table with correct schema" do
     end
   end
 end
+
+
